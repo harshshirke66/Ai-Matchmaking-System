@@ -10,11 +10,6 @@ st.markdown('\n    <style>\n    @import url(\'https://fonts.googleapis.com/css2?
 st.title('Dating Match Predictor')
 st.markdown("<p style='text-align: center; color: #888; margin-bottom: 2rem;'>Enter profile details to predict the likelihood of a match.</p>", unsafe_allow_html=True)
 groq_api_key = os.getenv('GROQ_API_KEY', '')
-if not groq_api_key:
-    with st.sidebar:
-        st.header('⚙️ Configuration')
-        st.markdown('For real AI integration, enter a free Groq API key. If left blank, it uses a smart fallback.')
-        groq_api_key = st.text_input('Groq API Key', type='password')
 
 @st.cache_resource
 def get_resources():
